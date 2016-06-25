@@ -8,7 +8,7 @@
   </head>
   <body>
     <h1>면접후기 작성</h1>
-    <a href="/"><button>홈</button></a>
+    <a href="/web/activityList"><button>홈</button></a> 
     <a href="/"><button onclick="back()">뒤로</button></a>
 
      <form action="/web/updateInterview" method="post">
@@ -31,16 +31,16 @@
 
         <table width="1300" border="1">
             <tr>
-                <th width="300">활동시기</th>
-                <td width="1000"><input type="text" name="term" size="160" maxlength="160" value="<%=interview.term%>"></td>
+                <th width="400">활동시기</th>
+                <td width="900"><input type="text" name="term" size="160" maxlength="160" value="<%=interview.term%>"></td>
             </tr>
             <tr>
                 <th>면접 난이도</th>
-                <td><input type="hidden" name="seq" value="<%=interview.seq%>"><input type="number" name="level" size="160" maxlength="160" value="<%=interview.level%>"></td>
+                <td><%=interview.level%></td>
             </tr>
             <tr>
                 <th>면접 결과</th>
-                <td><input type="text" name="result" size="160" maxlength="160" value="<%=interview.result%>"></td>
+                <td><input type="hidden" name="seq" value="<%=interview.seq%>"><%=interview.result%></td>
             </tr>
             <tr>
                 <th>면접 질문</th>
@@ -56,8 +56,7 @@
             </tr>
             <tr>
                 <td colspan="2" align="center">
-                    <input type="submit" value="저장">
-                    <input type="reset" value="취소">
+                    <input type="submit" value="저장">                    
                 </td>
             </tr>
         </table>

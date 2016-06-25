@@ -8,9 +8,9 @@
   </head>
   <body>
     <h1>활동후기 작성</h1>
-    <a href="/"><button>홈</button></a>
+    <a href="/web/activityList"><button>홈</button></a>     
     <a href="/"><button onclick="back()">뒤로</button></a>
-    
+
     <form action="/web/updatePostscript" method="post">
         <table width="1300" border="1">
             <tr>
@@ -36,11 +36,11 @@
             </tr>
             <tr>
                 <th>활동 총 평점</th>
-                <td><input type="hidden" name="seq" value="<%=postscript.seq%>"><input type="number" name="rate" value="<%=postscript.rate%>"></td>
+                <td><%=postscript.rate%></td>
             </tr>
             <tr>
                 <th>활동 한 줄 평</th>
-                <td><input type="text" name="comment" size="160" maxlength="160" value="<%=postscript.comment%>"></td>
+                <td><input type="hidden" name="seq" value="<%=postscript.seq%>"><input type="text" name="comment" size="160" maxlength="160" value="<%=postscript.comment%>"></td>
             </tr>
             <tr>
                 <th>도움이 된 점</th>
@@ -52,8 +52,7 @@
             </tr>
             <tr align="center">
                 <td colspan="2">
-                    <input type="submit" value="저장">
-                    <input type="reset" value="취소">
+                    <input type="submit" value="저장">                    
                 </td>
             </tr>
         </table>

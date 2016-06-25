@@ -13,13 +13,14 @@
         <table width="1400" border="1">
         	
         <tr>
-            <th width="100" >Seq</th>
+            <th width="50" >Seq</th>
             <th width="200" >대외활동 명(T아카데미)</th>
             <th width="200" >회사명((주)삼성전자)</th>
             <th width="200">모집 시작날짜(2016-06-11)</th>
-            <th width="200">모집 마감날짜(2016-06-18)</th>            
+            <th width="200">모집 마감날짜(D-Day)</th>            
             <th width="50">평점</th>            
             <th width="50">레벨</th>            
+            <th width="50">삭제</th>            
         </tr>    
 
         <%if(result.activity != null ){ %>
@@ -32,6 +33,7 @@
             <td align="center"><%=result.activity[i].endDate%></td>
             <td align="center"><%=result.activity[i].averageRate%></td>
             <td align="center"><%=result.activity[i].totalInterLevel%></td>
+            <td align="center"><a href="/web/removeActivity/<%=result.activity[i].seq%>">삭제</a></td>
         </tr>        
         <% }} %>
         </table>

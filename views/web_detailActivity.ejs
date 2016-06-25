@@ -73,11 +73,12 @@
     <table border="1" width="1300">
         <tr>
             <th width="50">seq</th>
-            <th width="150">writeDate</th>
-            <th width="100">rate</th>
-            <th width="250">comment</th>
-            <th width="350">commentGood</th>
-            <th width="400">commentBad</th>
+            <th width="150">작성날짜</th>
+            <th width="50">별점</th>
+            <th width="250">한줄평</th>
+            <th width="350">도움이된점</th>
+            <th width="400">아쉬운점</th>
+            <th width="50">삭제</th>
         </tr>
 
         <% for( var i=0 ; i<postscript.length ; i++ ) { %>
@@ -88,6 +89,7 @@
             <td><%=postscript[i].comment%></td>
             <td><%=postscript[i].commentGood%></td>
             <td><%=postscript[i].commentBad%></td>            
+            <td><a href="/web/webDeletePost/<%=postscript[i].seq%>"><button>삭제</button></a></td>
         </tr>
         <% } %>
     </table>
@@ -101,12 +103,13 @@
     <table border="1" width="1300">
         <tr>
             <th width="50">seq</th>
-            <th width="150">writeDate</th>
-            <th width="50">level</th>
-            <th width="50">result</th>
-            <th width="150">way</th>
-            <th width="250">question</th>
-            <th width="600">answer</th>
+            <th width="150">작성날짜</th>
+            <th width="50">난이도</th>
+            <th width="50">결고</th>
+            <th width="150">방식</th>
+            <th width="250">질문</th>
+            <th width="550">답</th>
+            <th width="50">삭제</th>
         </tr>
 
         <% for( var i=0 ; i<interview.length ; i++ ) { %>
@@ -117,7 +120,8 @@
             <td><%=interview[i].result%></td>
             <td><%=interview[i].way%></td>
             <td><%=interview[i].question%></td>
-            <td><%=interview[i].answer%></td>            
+            <td><%=interview[i].answer%></td>
+            <td><a href="/web/delInterview/<%=interview[i].seq%>"><button>삭제</button></a></td>            
         </tr>
         <% } %>
     </table>
