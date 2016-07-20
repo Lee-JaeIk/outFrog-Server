@@ -22,4 +22,36 @@ router.post('/insertInterview', function(req, res, next){
 });
 
 
+/* ----- 면접후기 리스트 -----
+	1. 면접후기 리스트
+	2. 면접후기 상세보기
+------------------------*/
+
+// 1. 면접후기 리스트
+router.get('/interviewList/:activity_seq', function(req, res, next){
+	var seq = req.params.activity_seq;
+	interview.interviewList(seq, function(result){ res.json(result); });
+});
+
+// 2. 면접후기 상세보기
+router.get('/detailInterview/:interview_seq', function(req, res, next){
+	var seq = req.params.interview_seq;
+	interview.detailInterview(seq, function(result){ res.json(result); });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 module.exports = router;

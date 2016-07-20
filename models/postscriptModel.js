@@ -148,6 +148,36 @@ exports.insertPostscript = function(req, callback){
 }
 
 
+
+
+
+/* ----- 대외활동 페이지 -----
+	1. 활동후기 리스트
+	2. 활동후기 상세페이지
+------------------------*/
+
+// 1. 활동후기 리스트
+exports.postscriptList = function(seq, callback){
+	PostscriptModel.findOne({'postscript_activity_seq': seq}, function(err, postscripts){
+		if(err) callback(statusFail);
+		if(!postscripts) callback(statusFail);
+		else callback(postscripts);
+	});
+}	// postscriptList
+
+// 2. 활동후기 상세페이지
+exports.detailPostscript = function(seq, callback){
+	PostscriptModel.findOne({'postscript_seq': seq}, function(err, postscript){
+		if(err) callback(statusFail);
+		if(!postscript) callback(statusFail);
+		else callback(postscript);
+	});
+}	// detailPostscript
+
+
+
+
+
 exports.findOnePostscript = function(seq, callback){
 	PostscriptModel.findOne({'postscript_seq':seq}, function(err, postscript){
 		if(err) callback(statusFail);

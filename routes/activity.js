@@ -81,17 +81,41 @@ router.get('/mainPage', function(req, res, next){
 });
 
 // 2. 대외활동명 검색
-// 3-1. 활동군별 조건검색
-router.post('/conditionsSearch', function(req, res, next){
-  activity.conditionsSearch(req, function(result){ res.json(result); });
+router.get('/searchActivity/:search', function(req, res, next){
+  var activity_name = req.params.search;
+  console.log('/api/searchActivity = ', activity_name);
+  activity.searchActivity(activity_name, function(result){ res.json(result); });
 });
+
+// 3-1. 활동군별 조건검색
 // 3-2. 산업군별 조건검색
 // 3-3. 지역별 조건검색
 // 3-4. 기간별 조건검색
 // 3-5. 별점순 조건검색
 // 3-6. 후기순 조건검색
+router.post('/conditionsSearch', function(req, res, next){
+  activity.conditionsSearch(req, function(result){ res.json(result); });
+});
 
 
+/* ----- 대외활동 페이지 -----
+  상세보기
+  1. 대외활동 상세보기Page
+  2. 대외활동 상세보기
+  5. 추천 대외활동 Page
+  6. 추천 대외활동
+------------------------*/
+
+// 1. 대외활동 상세보기 Page
+router.get('/detailActivityPage/:activity_seq', function(req, res, next){
+  var seq = req.params.activity_seq;
+  activity.detailActivity(seq, function(result){ res.json(result); });
+});
+
+
+
+
+// 특정 대외활동 검색
 router.get('/findOneActivity/:seq', function(req, res, next){
   var seq = req.params.seq;
   activity.findOneActivity(seq, function(result){ res.json(result); });

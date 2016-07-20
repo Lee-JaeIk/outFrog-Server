@@ -9,8 +9,8 @@
     <h1>대외활동 페이지</h1>        
 
     <h1>대외활동 정보</h1>
-    <a href="/web/activityList"><button>홈</button></a> 
-    <a href="/web/updateActivity/<%=activity.seq%>"><button>대외활동 수정</button></a>
+    <a href="/activity/activityList"><button>홈</button></a> 
+    <a href="/activity/updateActivity/<%=activity.activity_seq%>"><button>대외활동 수정</button></a>
     <a href="/"><button onclick="back()">뒤로</button></a>
     <!-- name / startDate / actClass / indus / term / during / reigon / companyName -->
     <table border="1" width="1300">
@@ -50,15 +50,15 @@
     <table border="1" width="1300">
         <tr>
             <th width="400">guideImg</th>
-            <td width="900" align="center"><a href="<%=activity.guideImg%>"><%=activity.guideImg%></a></td>
+            <td width="900" align="center"><a href="<%=activity.guideImg%>"><%=activity.activity_guideImg%></a></td>
         </tr>
         <tr>
             <th>recruitImg</th>
-            <td align="center"><a href="<%=activity.recruitImg%>"><%=activity.recruitImg%></a></td>
+            <td align="center"><a href="<%=activity.recruitImg%>"><%=activity.activity_recruitImg%></a></td>
         </tr>
         <tr>
             <th>companyLogo</th>
-            <td align="center"><a href="<%=activity.companyLogo%>"><%=activity.companyLogo%></a></td>
+            <td align="center"><a href="<%=activity.companyLogo%>"><%=activity.activity_companyLogo%></a></td>
         </tr>
     </table>
 

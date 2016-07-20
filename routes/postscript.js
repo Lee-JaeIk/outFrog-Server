@@ -21,6 +21,29 @@ router.post('/insertPostscript', function(req, res, next){
 });
 
 
+/* ----- 대외활동 페이지 -----
+	1. 활동후기 리스트
+	2. 활동후기 상세페이지
+------------------------*/
+
+// 1. 활동후기 리스트
+router.get('/postscriptList/:activity_seq', function(req, res, next){
+	var seq = req.params.activity_seq;
+	postscript.postscriptList(seq, function(result){ res.json(result); });
+});	// /postscriptList
+
+// 2. 활동후기 상세페잊
+router.get('/detailPostscript/:postscript_seq', function(req, res, next){
+	var seq = req.params.postscript_seq;
+	postscript.detailPostscript(seq, function(result){ res.json(result); });
+});	// detailPostscript
+
+
+
+
+
+
+
 
 
 router.get('/findOnePostscript/:seq', function(req, res, next){

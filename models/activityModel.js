@@ -142,6 +142,17 @@ exports.mainPage = function(callback){
 	7. 후기순
 	8. 추천 대외활동
 -------------------------*/
+
+// 1. 대외활동명 검색
+exports.searchActivity = function(search, callback){
+	ActivityModel.find({'activity_name':{$regex:search}}, function(err, activity){
+		if(err) callback(statusFail);
+		if(!activity) callback(statusFail);
+		else callback(activity);
+	});	// ActivityModel
+}
+
+// 2-7. 대외활동 검색
 var conditionsActivityValue = 0;
 var averageRateActivityValue = 1;
 var postscriptCountActivityValue = 2;
@@ -185,6 +196,26 @@ exports.conditionsSearch = function(req, callback){
 		break;		
 	}
 }	// conditionsSearch
+
+
+
+/* ----- 대외활동 페이지 -----
+  상세보기
+  1. 대외활동 상세보기
+  2. 모집요강
+  3. 추천 대외활동
+------------------------*/
+
+// 1. 대외활동 상세보기
+exports.detailActivity = function(seq, callback){
+	ActivityModel.findOne({'activity_seq':seq}, function(err, activity){
+		if(err) callback(statusFail);
+		if(!activity) callback(statusFail);
+		else callback(activity);
+	});	// ActivityModel
+}	// detailActivity
+
+
 
 
 

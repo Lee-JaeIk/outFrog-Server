@@ -27,7 +27,7 @@
         <%for( var i=0 ; i<result.activity.length ; i++) {%>
         <tr>
             <td align="center"><%=result.activity[i].seq%></td>
-            <td align="center"><a href="/web/detailActivity/<%=result.activity[i].seq%>"> <%=result.activity[i].name%> </a></td>
+            <td align="center"><a href="/activity/detailActivityPage/<%=result.activity[i].activity_seq%>"> <%=result.activity[i].name%> </a></td>
             <td align="center"><%=result.activity[i].companyName%></td>
             <td align="center"><%=result.activity[i].startDate%></td>
             <td align="center"><%=result.activity[i].endDate%></td>

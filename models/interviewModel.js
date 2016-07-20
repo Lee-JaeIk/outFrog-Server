@@ -25,7 +25,7 @@ var InterviewSchema = new mongoose.Schema({
 	'interview_activity_actClass' : { type:String, default:"전체" }
 });
 
-InterviewSchema.plugin(autoIncrement.plugin, { model: 'Interview', field: 'activity_seq' });
+InterviewSchema.plugin(autoIncrement.plugin, { model: 'Interview', field: 'interview_seq' });
 mongoose.model('Interview', InterviewSchema);
 
 
@@ -37,7 +37,7 @@ require('./memberModel');
 var MemberModel = db.model('Member');
 
 require('./interviewModel');
-var interviewModel = db.model('Interview');
+var InterviewModel = db.model('Interview');
 var userException = require('./userException');
 
 var statusOk = { "status":"OK" }
@@ -66,7 +66,7 @@ exports.insertInterview = function(req, callback){
 		if(err) callback(statusFail);
 		if(!activity) callback(statusFail);
 		else{
-			var interview = new interviewModel({
+			var interview = new InterviewModel({
 				'interview_writer': interview_writer,
 				'interview_origin_writeDate': now,
 				'interview_writeDate': writeDate,
@@ -112,3 +112,28 @@ exports.insertInterview = function(req, callback){
 		}	// else 
 	});	// ActivityModel
 }
+
+
+
+/* ----- 면접후기 리스트 -----
+	1. 면접후기 리스트
+	2. 면접후기 상세보기
+------------------------*/
+
+// 1. 면접후기 리스트
+exports.interviewList = function(seq, callback){
+	InterviewModel.find({'interview_activity_seq':seq}, function(err, interviews){
+		if(err) callback(statusFail);
+		if(!interviews) callback(statusFail);
+		else callback(interviews);
+	});	
+}	// interviewList
+
+// 2. 면접후기 상세보기
+exports.detailInterview = function(seq, callback){
+	InterviewModel.findOne({'interview_seq': seq}, function(err, interview){
+		if(err) callback(statusFail);
+		if(!interview) callback(statusFail);
+		else callback(interview);
+	});	// InterviewModel
+}	// detailInterview
