@@ -10,9 +10,11 @@ var client = require('redis').createClient();
 
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
-var members = require('./routes/members');
-var activities = require('./routes/activities');
+var member = require('./routes/member');
+var activity = require('./routes/activity');
+var postscript = require('./routes/postscript');
+var interview = require('./routes/interview');
+var interest = require('./routes/interest');
 var web = require('./routes/web');
 
 var app = express();
@@ -39,9 +41,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 // }));
 
 app.use('/', routes);
-app.use('/users', users);
-app.use('/members', members);
-app.use('/activities', activities);
+app.use('/member', member);
+app.use('/activity', activity);
+app.use('/postscript', postscript);
+app.use('/interview', interview);
+app.use('/interest', interest);
 app.use('/web', web);
 
 

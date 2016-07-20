@@ -5,16 +5,14 @@ var db = require('../models/mongodb');
 require('../models/activityModel');
 var ActivityModel = db.model('Activity');
 
+require('../models/memberModel');
+var MemberModel = db.model('Member');
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('web_index', { title: 'OutFrog' });
 });
 
 
-router.get('/getActivity', function(req, res, next){
-	ActivityModel.find(function(err, activity){
-		if(err) console.log('/index err ', err);
-		res.json(activity);
-	});
-});
+
 module.exports = router;

@@ -7,8 +7,8 @@
   </head>
   <body>
     <h1>대외활동 작성</h1>
-    <a href="/web/activityList"><button>리스트</button></a>
-    <form enctype="multipart/form-data" action="/web/insertActivity" method="post" >
+    <a href="/activity/activityList"><button>리스트</button></a>
+    <form enctype="multipart/form-data" action="/activity/insertActivity" method="post" >
         <table width="1000" border="1">
         	<tr>
         		<th width="500">대외활동 명</th>
@@ -31,10 +31,6 @@
                 <td><input type="text" name="indus" size="75" maxlength="75"></td>
         	</tr>
             <tr>
-                <th>활동기간(180)</th>
-                <td><input type="text" name="during" size="75" maxlength="75"></td>
-            </tr>
-            <tr>
                 <th>활동시기(2015 상반기)</th>
                 <td><input type="text" name="term" size="75" maxlength="75"></td>
             </tr>
@@ -43,20 +39,24 @@
                 <td><input type="text" name="region" size="75" maxlength="75"></td>
             </tr>
             <tr>
+                <th>활동기간(180)</th>
+                <td><input type="text" name="during" size="75" maxlength="75"></td>
+            </tr>
+            <tr>
                 <th>회사명(SKT)</th>
                 <td><input type="text" name="companyName" size="75" maxlength="75"></td>
             </tr>
             <tr>
                 <th>모집요강에 사용되는 이미지</th>
-                <td><input type="file" name="activityImg"></td>
+                <td><input type="file" name="activityImage"></td>
             </tr>
             <tr>
                 <th>대외활동 이미지</th>
-                <td><input type="file" name="activityImg"></td>
+                <td><input type="file" name="activityImage"></td>
             </tr>
             <tr>
                 <th>주최회사 로고</th>
-                <td><input type="file" name="activityImg"></td>
+                <td><input type="file" name="activityImage"></td>
             </tr>
         	<tr align="center">
         		<td colspan="2">

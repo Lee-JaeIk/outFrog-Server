@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <meta charset="utf-8">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>          
+      <form action="/member/signUp" method="post">
+        <table width="1000" border="1">
+          <tr>
+            <th width="500">이메일 주소</th>
+            <td width="500"><input type="text" name="loginEmail" size="75" maxlength="75"></td>
+          </tr>     
+          <tr>
+            <th>비밀번호(8자리 이상)</th>
+            <td><input type="password" name="password" size="75" maxlength="75"></td>
+          </tr>     
+          <tr>
+            <td colspan="2" align="center">
+              <input type="submit" value="회원가입">              
+            </td>
+          </tr>
+        </table>
+      </form>
+  </body>
+</html>

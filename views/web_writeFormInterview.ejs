@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>면접후기 작성</title>
     <script> function back() { window.history.back(); } </script>
+    <title>면접후기 작성</title>
     <meta charset="utf-8">
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
@@ -11,24 +11,7 @@
     <a href="/"><button>홈</button></a>
     <a href="/"><button onclick="back()">뒤로</button></a>
 
-     <form action="/web/writeInterview" method="post">
-        <table width="1300" border="1">
-            <tr>
-                <th width="100">activitySeq</th>
-                <th width="200">대외활동 명</th>
-                <th width="200">활동</th>
-                <th width="200">회사이름</th>
-                <th width="600">회사로고</th>
-            </tr>
-            <tr>
-                <td><input type="hidden" name="activitySeq" value="<%=activity.seq%>"><%=activity.seq%></td>
-                <td><input type="hidden" name="activityName" value="<%=activity.name%>"><%=activity.name%></td>
-                <td><input type="hidden" name="actClass" value="<%=activity.actClass%>"><%=activity.actClass%></td>
-                <td><input type="hidden" name="companyName" value="<%=activity.companyName%>"><%=activity.companyName%></td>
-                <td><input type="hidden" name="companyLogo" value="<%=activity.companyLogo%>"><%=activity.companyLogo%></td>
-            </tr>
-        </table>
-
+     <form action="/interview/insertInterview" method="post">
         <table width="1300" border="1">
             <tr>
                 <th width="300">활동시기(2015 상반기)</th>
