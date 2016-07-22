@@ -137,3 +137,33 @@ exports.detailInterview = function(seq, callback){
 		else callback(interview);
 	});	// InterviewModel
 }	// detailInterview
+
+
+
+
+/* ----- 마이페이지 -----
+	1. 내가 작성한 면접후기 리스트
+--------------------*/
+exports.myInterviewList = function(req, callback){
+	// var member_loginEmail = req.session.loginEmail;
+	var member_loginEmail = "jjgorl@hanmail.net";
+
+	InterviewModel.find({'interview_writer': member_loginEmail}, function(err, interview){
+		if(err) callback(statusFail);
+		if(!interview) callback(statusFail);
+		else callback(interview);
+	});	// InterviewModel
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -42,7 +42,12 @@ router.get('/detailInterview/:interview_seq', function(req, res, next){
 
 
 
-
+/* ----- 마이페이지 -----
+	1. 내가 작성한 면접후기 리스트
+--------------------*/
+router.get('/myInterviewList', function(req, res, next){
+	interview.myInterviewList(req, function(result){ res.json(result); });
+});	// myInterviewList
 
 
 

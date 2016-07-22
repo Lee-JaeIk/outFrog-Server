@@ -112,6 +112,33 @@ router.get('/checkSession', function(req, res, next){
 
 
 
+
+
+/* ---------- UserPage ----------------
+  1. 나의개굴 확인
+  2. 내가 찜한 대외활동 3개
+    1. 찜한 대외활동 더보기
+  3. 활동내역
+    1. 내가 작성한 활동후기
+    2. 내가 작성한 면접후기
+  4. 여러개 더 있음.
+    1. 회원탈퇴
+    2. 로그아웃
+    3. 관심활동군 선택
+    4. 관심산업군 선택
+-------------------------------------*/
+
+// 1. 나의개굴 확인
+router.get('/myPoint', function(req, res, next){
+  member.myPoint(req, function(result){ res.json(result); });
+});
+
+// 2. 내가 찜한 대외활동 3개 --> interest에서 처리
+// 2-1. 찜한 대외활동 더보기 --> interest에서 처리
+
+// 3-1. 내가 작성한 활동후기 --> postscript
+// 3-2. 내가 작성한 면접후기 --> interview
+
 router.get('/findOneMember/:seq', function(req, res, next){
   var seq = req.params.seq;
   member.findOneMember(seq, function(result){ res.json(result); });

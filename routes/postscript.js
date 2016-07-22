@@ -42,8 +42,12 @@ router.get('/detailPostscript/:postscript_seq', function(req, res, next){
 
 
 
-
-
+/* ----- 마이페이지 -----
+	1. 내가 작성한 활동후기 리스트
+--------------------*/
+router.get('/myPostscriptList', function(req, res, next){
+	postscript.myPostscriptList(req, function(result){ res.json(result); });
+});	// myPostscriptList
 
 
 router.get('/findOnePostscript/:seq', function(req, res, next){

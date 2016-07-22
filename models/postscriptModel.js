@@ -178,6 +178,31 @@ exports.detailPostscript = function(seq, callback){
 
 
 
+/* ----- 마이페이지 -----
+	1. 내가 작성한 활동후기 리스트
+--------------------*/
+exports.myPostscriptList = function(req, callback){
+	// var member_loginEmail = req.session.loginEmail;
+	var member_loginEmail = "jjgorl@hanmail.net";
+
+	PostscriptModel.find({'postscript_writer':member_loginEmail}, function(err, postscript){
+		if(err) callback(statusFail);
+		if(!postscript) callback(statusFail);
+		else callback(postscript);
+	});	// PostscriptModel
+}	// myPostscriptList
+
+
+
+
+
+
+
+
+
+
+
+
 exports.findOnePostscript = function(seq, callback){
 	PostscriptModel.findOne({'postscript_seq':seq}, function(err, postscript){
 		if(err) callback(statusFail);

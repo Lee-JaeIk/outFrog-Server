@@ -99,12 +99,19 @@ router.post('/conditionsSearch', function(req, res, next){
 
 
 /* ----- 대외활동 페이지 -----
+  0. 대외활동 리스트
+
   상세보기
   1. 대외활동 상세보기Page
   2. 대외활동 상세보기
   5. 추천 대외활동 Page
   6. 추천 대외활동
 ------------------------*/
+
+// 0. 대외활동 리스트
+router.get('/activityList', function(req, res, next){
+  activity.activityList(function(result){ res.json(result); });
+});
 
 // 1. 대외활동 상세보기 Page
 router.get('/detailActivityPage/:activity_seq', function(req, res, next){

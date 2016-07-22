@@ -172,6 +172,12 @@ exports.conditionsSearch = function(req, callback){
 	if( duringValue == "null" || duringValue == "전체" ) duringValue = '';
 	if( regionValue == "null" || regionValue == "전체" ) regionValue = '';
 
+	/* ----- 조건별 대외화동 -----
+		1. value == 0 조건별 대외활동
+		2. value == 1 평균점수가 높은순
+		3. value == 2 활동후기가 많은순
+		4. value == 3 추천 대외활동
+	------------------------*/
 	switch(value){
 		case conditionsActivityValue:
 			ActivityModel.find({$and:[  {'activity_actClass':{$regex:actClassValue}}, {'activity_indus':{$regex:indusValue}}, {'activity_strDuring':{$regex:duringValue}}, {'activity_region':{$regex:regionValue}} ]}, function(err, activity){
@@ -200,11 +206,22 @@ exports.conditionsSearch = function(req, callback){
 
 
 /* ----- 대외활동 페이지 -----
-  상세보기
-  1. 대외활동 상세보기
-  2. 모집요강
-  3. 추천 대외활동
+	0. 대외활동 리스트
+
+	상세보기
+	1. 대외활동 상세보기
+	2. 모집요강
+	3. 추천 대외활동
 ------------------------*/
+
+// 0. 대외활동 리스트
+exports.activityList = function(callback){
+	ActivityModel.find(function(err, activity){
+		if(err) callback(statusFail);
+		if(!activity) callback(statusFail);
+		else callback(result);
+	}).sort({'activity_origin_endDate':1});	// ActivityModel
+}	// activityList
 
 // 1. 대외활동 상세보기
 exports.detailActivity = function(seq, callback){

@@ -325,10 +325,34 @@ exports.login = function(req, callback){
 		2. 로그아웃
 		3. 관심활동군 선택
 		4. 관심산업군 선택
+		5. 나의 관심활동군 가져오기
+		6. 나의 관심산업군 가져오기
 -------------------------------------*/
 
 
+// 1. 나의개굴 확인
+exports.myPoint = function(req, callback){
+	
+	// var member_loginEmail = req.session.loginEmail;
+	var member_loginEmail = "jjgorl@hanmail.net";
+	MemberModel.findOne({'member_loginEmail': member_loginEmail}, function(err, member){
+		if(err) callback(statusFail);
+		if(!member) callback(statusFail);
+		else callback(member);
+	});
+}	// myPoint
 
+
+// 4-1. 회원탈퇴
+// 4-2. 로그아웃
+
+// 4-3. 관심활동군 선택
+exports.selectActClass = function(req, callback){
+	
+}
+// 4-4. 관심산업군 선택
+// 4-5. 나의 관심활동군 가져오기.
+// 4-6. 나의 관심산업군 가져오기
 
 
 
