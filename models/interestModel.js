@@ -39,7 +39,7 @@ var ActivityModel = db.model('Activity');
 
 /* ----- 찜한 대외활동 -----
 	1. 대외활동 찜하기 ( 취소포함 ) / 대외활동 상세페이지
-	2. 대외활동 리스트 ( 내가 찜한 대외활동 리스트 ) / 마이페이지
+	2. 대외활동 리스트 ( 내가 찜한 대외활동 리스트 3개 ) / 마이페이지
 	3. 대외활동 리스트 더보기
 -----------------------*/
 
@@ -121,6 +121,7 @@ exports.interestMoreList = function(req, callback){
 		else callback(interest);
 	});
 }	// interestMoreList
+
 
 /* ----- 찜한 대외활동 -----
 	1. member_loginEmail로 interestActivity가져온다.

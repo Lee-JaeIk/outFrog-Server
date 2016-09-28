@@ -232,12 +232,6 @@ exports.detailActivity = function(seq, callback){
 	});	// ActivityModel
 }	// detailActivity
 
-
-
-
-
-
-
 exports.findOneActivity = function(seq, callback){
 	ActivityModel.findOne({'activity_seq':seq}, function(err, activity){
 		if(err) callback(statusFail);

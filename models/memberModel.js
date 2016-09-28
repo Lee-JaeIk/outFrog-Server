@@ -85,7 +85,7 @@ exports.signUp = function(req, callback){
 				4. html : 메일 내용!
 			-----------------------------------*/
 			var mailOptions = {
-				from: '"[우물밖 개구리]" <testfrog2@gmail.com>', 
+				title: '"[우물밖 개구리]" <sixhustle@gmail.com>', 
 				to: loginEmail, 
 				subject: mailTitle, 
 				html: htmlText
@@ -342,6 +342,11 @@ exports.myPoint = function(req, callback){
 	});
 }	// myPoint
 
+// 2. 내가 찜한대외활동 3개	[interestModel]
+// 2-1. 찜한 대외활동 더보기	[interestModel]
+
+// 3-1. 내가 작성한 활동후기 리스트 [postscriptModel]
+// 3-2. 내가 작성한 면저후기 리스트 [interviewModel]
 
 // 4-1. 회원탈퇴
 // 4-2. 로그아웃
@@ -364,7 +369,10 @@ exports.selectActClass = function(req, callback){
 
 
 
-
+/* ---------- Notification ----------------
+	1. 찜한 대외활동 알림 보내기
+	2. Notification 목록 확인하기
+-------------------------------------*/
 
 
 

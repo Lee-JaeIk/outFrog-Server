@@ -48,6 +48,7 @@ router.post('/signUp', function(req, res, next){
 router.get('/provisionCheck/:mail/:num', function(req, res, next){
   var member_loginEmail = req.params.mail;
   var member_provision_num = req.params.num;
+  
   /* ------------ 이메일 인증 --------------
       1. 발생시킨 난수가 일치하면 회원가입 완료!
       2. 아니면 이메일 인증을 다시하도록!
